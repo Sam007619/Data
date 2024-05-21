@@ -10,11 +10,6 @@ describe ( 'convert into Json File',()=>{
           cy.task('parseXlsx', filePath);
  
          cy.parseXlsx('.cypress/fixtures/login.xlsx').then((jsonData)=>{
-
-
-           
-  
- 
              const rowlenght = Cypress.$(jsonData[0].data).length
              cy.log(rowlenght)
              for(let i=1;i< rowlenght ; i++){
@@ -38,7 +33,7 @@ describe ( 'convert into Json File',()=>{
                  cy.get('body').then(($body)=>{
                      let lgt=$body.find ('.btn').length
                      cy.log(lgt)
- 
+                     console.log(lgt)
                      if(lgt==0){
  
                          cy.contains('Logged In Successfully').should('be.visible')
