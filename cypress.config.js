@@ -2,7 +2,6 @@
 const { defineConfig } = require("cypress");
 
 const xlsx= require('node-xlsx').default;
-var XLSX = require("xlsx");
 const fs=require('fs')
 const path= require('path')
 
