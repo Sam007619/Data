@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx cypress run",
+    "headed":"npx cypress open",
+    "runInChrome":"npx cypress run -- browser chrome",
+    "spec": "npx cypress run --spec 'cypress/e2e/proto.cy.js'"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "cypress": "^13.9.0",
-    "node-xlsx": "^0.24.0"
+    "cypress": "^13.6.6",
+    "node-xlsx": "^0.23.0"
   }
 }

@@ -1,9 +1,10 @@
+
+///<reference types="Cypress"/>
+
+
 describe ( 'convert into Json File',()=>{
 
-    const data = "cypress/fixtures/login.xlsx"
- 
- 
-     it ('Read data from xcel',()=>{
+      it ('Read data from excel',()=>{
  
          cy.parseXlsx('cypress/fixtures/login.xlsx').then((jsonData)=>{
  
@@ -23,7 +24,7 @@ describe ( 'convert into Json File',()=>{
  
                  cy.get('#username').type(value[0])
                  cy.get('#password').type(value[1])
-                 cy.get('.btn').click().should('be.visible')
+                 cy.get('#submit').click()
                  cy.wait(5000)
                  cy.get('body').then(($body)=>{
                      let lgt=$body.find ('.btn').length

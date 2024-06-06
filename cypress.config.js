@@ -5,6 +5,7 @@ const xlsx= require('node-xlsx').default;
 const fs=require('fs')
 const path= require('path')
 
+
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
@@ -15,7 +16,9 @@ module.exports = defineConfig({
         return new Promise ((resolve ,reject )=>{
 
           try{
-            const jsonData=xlsx.parse(fs.readFileSync(filepath))
+            const jsonData=xlsx.parse(fs.readFileSync(filePath))
+            const filePath =path.join(__dirname, 'fixtures', 'login.xlsx')
+            console.log(filePath)
             resolve(jsonData)
           
           }catch(e){

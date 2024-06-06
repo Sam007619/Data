@@ -1,4 +1,4 @@
-class Assert{
+class Asserting{
 
     AssertUrl() {
         return cy
@@ -6,4 +6,4 @@ class Assert{
           .should("include", "https://rahulshettyacademy.com/angularpractice/");
 }
 }
-export default Assert
+export default Asserting;

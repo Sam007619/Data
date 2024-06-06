@@ -1,29 +1,32 @@
 ///< reference types="cypress" />
 
-import Home from "./POM/Home"
-import Assert from "./POM/Assert"
-
+import Home from "../POM/Homepage"
+import Asserting from "../POM/Assert"
 describe('ProtoCommerce',()=>{
+  
+  
 
-    beforeEach(()=>{
+
+    before(()=>{
           cy.visit('https://rahulshettyacademy.com/angularpractice/')
           cy.fixture('login').then((login)=>{
-            this.login=login
+           
+            
           })    
     })
 
     it ('Asserting the webpage',()=>{
+      const asserting=new Asserting()
+      Asserting.AssertUrl()
 
-        const Assert=new Assert()
-        Assert.AssertUrl()
     })
 
     it('HomePage',()=>{
 
-        const Home=new Home()
-        Home.typeUsername(this.login.username)
-        Home.typeEmail(this.login.email)
-        Home.typePassword(this.login.password)
+        const home =new Home()
+        Home.typeUsername('Sujith')
+        Home.typeEmail('Sujith@12')
+        Home.typePassword('12345')
         Home.Checkbox()
         Home.Gender()
         Home.Radiobutton()
